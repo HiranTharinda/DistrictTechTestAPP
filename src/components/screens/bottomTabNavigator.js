@@ -4,7 +4,7 @@ import FeatherIcon from 'react-native-vector-icons/Feather';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import RestaurantScreen from './RestaurantScreen';
 import MapScreen from './MapScreen';
-import colors from '../../data/colors';
+import colors from '../../constants/colors';
 
 const Tab = createBottomTabNavigator();
 

@@ -7,7 +7,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import BottomTabNavigator from './src/components/screens/bottomTabNavigator';
 import SplashScreen from './src/components/screens/splashScreen';
 import DetailsScreen from './src/components/screens/detailsScreen';
-import colors from './src/data/colors';
+import colors from './src/constants/colors';
 import configureStore from './src/store';
 
 LogBox.ignoreLogs([

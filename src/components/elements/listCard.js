@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
-import colors from '../../data/colors';
+import colors from '../../constants/colors';
 const ListCard = ({item, navigation}) => {
   return (
     <View style={style.listCard}>

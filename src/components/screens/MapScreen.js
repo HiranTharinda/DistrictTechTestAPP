@@ -3,7 +3,7 @@ import {StyleSheet, View} from 'react-native';
 import {connect} from 'react-redux';
 import MapView, {PROVIDER_GOOGLE, Marker} from 'react-native-maps';
 import {getRestaurants} from '../../actions/restaurantsAction';
-import mapStyles from '../../data/mapStyles';
+import mapStyles from '../../constants/mapStyles';
 
 const MapScreen = ({restaurants, getRestaurants}) => {
   const mapViewRef = useRef();

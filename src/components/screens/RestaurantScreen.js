@@ -4,8 +4,7 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import {connect} from 'react-redux';
 import ListCard from '../elements/listCard';
 import {getRestaurants} from '../../actions/restaurantsAction';
-
-import colors from '../../data/colors';
+import colors from '../../constants/colors';
 
 const RestaurantScreen = ({navigation, restaurants, getRestaurants}) => {
   useEffect(() => {

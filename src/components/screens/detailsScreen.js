@@ -13,7 +13,7 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {connect} from 'react-redux';
-import colors from '../../data/colors';
+import colors from '../../constants/colors';
 import {updateRestaurant} from '../../actions/restaurantsAction';
 
 const windowHeight = Dimensions.get('window').height;
