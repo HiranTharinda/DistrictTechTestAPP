@@ -20,7 +20,7 @@ const MapScreen = ({navigation, route, restaurants}) => {
         );
       }, 100);
     }
-  }, []);
+  }, [restaurants]);
 
   useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => {
@@ -72,14 +72,8 @@ const MapScreen = ({navigation, route, restaurants}) => {
               longitude: item.longitude,
             }}
             title={item.name}
-            description={item.description}>
-            <View>
-              <FontAwesome5
-                name="map-marker-alt"
-                color={colors.primary}
-                size={35}
-              />
-            </View>
+            description={item.description}
+            image={require('../../../assets/img/pin2.png')}>
             <Callout
               tooltip
               style={{flex: 1, position: 'relative'}}
@@ -111,9 +105,7 @@ const style = StyleSheet.create({
     flexDirection: 'row',
     alignSelf: 'flex-start',
     backgroundColor: colors.white,
-    borderBottomRightRadius: 30,
-    borderTopRightRadius: 30,
-    borderTopLeftRadius: 30,
+    borderRadius: 30,
     borderColor: colors.primary,
     elevation: 5,
     borderWidth: 2,
