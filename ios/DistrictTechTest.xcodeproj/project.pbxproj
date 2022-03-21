@@ -28,6 +28,13 @@
 		3E48AEB16F734861BE11F8A2 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8F08AE39E2244C558A22512F /* Octicons.ttf */; };
 		016975D1D9A444A8AE1A26A8 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F87695F301314182A08C5410 /* SimpleLineIcons.ttf */; };
 		E13A87C9201941C7AE6E7840 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8827CCEF202400FA89427A1 /* Zocial.ttf */; };
+		8E654AFA7348448EBAA38A4E /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E93250311C9B427992D699B4 /* Nunito-Bold.ttf */; };
+		A955D30B2CE94D61B56BFB77 /* Nunito-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 505390257D364E8AB81E176B /* Nunito-Italic.ttf */; };
+		C378F3344D8648B989BF9B24 /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 712F602E57BC4815A137526E /* Nunito-Regular.ttf */; };
+		60FE04EFC93D4C13A71CE733 /* DancingScript-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5D8E5119ACC440429C27BF2A /* DancingScript-Bold.ttf */; };
+		043D7B75F511438D8925FE9E /* DancingScript-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C093D1C24CD1466FA0792E47 /* DancingScript-Medium.ttf */; };
+		26D54046C294466796FC376D /* DancingScript-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 691397A6AE4B4E3FBF8D1773 /* DancingScript-Regular.ttf */; };
+		F3C3FFF597EE4D8CB81A9B8D /* DancingScript-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9F367AA9A714CD98012B80A /* DancingScript-SemiBold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +75,13 @@
 		8F08AE39E2244C558A22512F /* Octicons.ttf */ = {isa = PBXFileReference; name = "Octicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		F87695F301314182A08C5410 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		E8827CCEF202400FA89427A1 /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E93250311C9B427992D699B4 /* Nunito-Bold.ttf */ = {isa = PBXFileReference; name = "Nunito-Bold.ttf"; path = "../assets/fonts/Nunito-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		505390257D364E8AB81E176B /* Nunito-Italic.ttf */ = {isa = PBXFileReference; name = "Nunito-Italic.ttf"; path = "../assets/fonts/Nunito-Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		712F602E57BC4815A137526E /* Nunito-Regular.ttf */ = {isa = PBXFileReference; name = "Nunito-Regular.ttf"; path = "../assets/fonts/Nunito-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5D8E5119ACC440429C27BF2A /* DancingScript-Bold.ttf */ = {isa = PBXFileReference; name = "DancingScript-Bold.ttf"; path = "../assets/fonts/DancingScript-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C093D1C24CD1466FA0792E47 /* DancingScript-Medium.ttf */ = {isa = PBXFileReference; name = "DancingScript-Medium.ttf"; path = "../assets/fonts/DancingScript-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		691397A6AE4B4E3FBF8D1773 /* DancingScript-Regular.ttf */ = {isa = PBXFileReference; name = "DancingScript-Regular.ttf"; path = "../assets/fonts/DancingScript-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A9F367AA9A714CD98012B80A /* DancingScript-SemiBold.ttf */ = {isa = PBXFileReference; name = "DancingScript-SemiBold.ttf"; path = "../assets/fonts/DancingScript-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +190,13 @@
 				8F08AE39E2244C558A22512F /* Octicons.ttf */,
 				F87695F301314182A08C5410 /* SimpleLineIcons.ttf */,
 				E8827CCEF202400FA89427A1 /* Zocial.ttf */,
+				E93250311C9B427992D699B4 /* Nunito-Bold.ttf */,
+				505390257D364E8AB81E176B /* Nunito-Italic.ttf */,
+				712F602E57BC4815A137526E /* Nunito-Regular.ttf */,
+				5D8E5119ACC440429C27BF2A /* DancingScript-Bold.ttf */,
+				C093D1C24CD1466FA0792E47 /* DancingScript-Medium.ttf */,
+				691397A6AE4B4E3FBF8D1773 /* DancingScript-Regular.ttf */,
+				A9F367AA9A714CD98012B80A /* DancingScript-SemiBold.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -287,6 +308,13 @@
 				3E48AEB16F734861BE11F8A2 /* Octicons.ttf in Resources */,
 				016975D1D9A444A8AE1A26A8 /* SimpleLineIcons.ttf in Resources */,
 				E13A87C9201941C7AE6E7840 /* Zocial.ttf in Resources */,
+				8E654AFA7348448EBAA38A4E /* Nunito-Bold.ttf in Resources */,
+				A955D30B2CE94D61B56BFB77 /* Nunito-Italic.ttf in Resources */,
+				C378F3344D8648B989BF9B24 /* Nunito-Regular.ttf in Resources */,
+				60FE04EFC93D4C13A71CE733 /* DancingScript-Bold.ttf in Resources */,
+				043D7B75F511438D8925FE9E /* DancingScript-Medium.ttf in Resources */,
+				26D54046C294466796FC376D /* DancingScript-Regular.ttf in Resources */,
+				F3C3FFF597EE4D8CB81A9B8D /* DancingScript-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,7 @@ import {
   Image,
   Dimensions,
   TouchableOpacity,
+  StatusBar,
 } from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
@@ -37,6 +38,11 @@ const DetailsScreen = ({navigation, route, updateRestaurant}) => {
 
   return (
     <SafeAreaView style={style.container}>
+      <StatusBar
+        animated={true}
+        backgroundColor={colors.white}
+        barStyle={'dark-content'}
+      />
       <View style={style.header}>
         <MaterialIcons
           name="arrow-back-ios"
@@ -47,7 +53,11 @@ const DetailsScreen = ({navigation, route, updateRestaurant}) => {
       </View>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={style.imgContainer}>
-          <Image source={{uri: item.img}} style={style.img} />
+          <Image
+            resizeMode="contain"
+            source={{uri: item.img}}
+            style={style.img}
+          />
         </View>
         <View style={style.details}>
           <View style={style.content}>
@@ -87,11 +97,11 @@ const style = StyleSheet.create({
     paddingVertical: 20,
     flexDirection: 'row',
     alignItems: 'center',
-    marginLeft: 10,
+    marginLeft: 20,
   },
   headerTitle: {
     fontSize: 20,
-    fontWeight: 'bold',
+    fontFamily: 'Nunito-Bold',
   },
   imgContainer: {
     justifyContent: 'center',
@@ -117,8 +127,8 @@ const style = StyleSheet.create({
     alignItems: 'center',
   },
   itemName: {
-    fontSize: 25,
-    fontWeight: 'bold',
+    fontSize: 30,
+    fontFamily: 'DancingScript-Bold',
     color: colors.white,
   },
   iconContainer: {
@@ -132,8 +142,8 @@ const style = StyleSheet.create({
   },
   detailsText: {
     marginTop: 10,
-    lineHeight: 22,
     fontSize: 16,
     color: colors.white,
+    fontFamily: 'Nunito-Bold',
   },
 });

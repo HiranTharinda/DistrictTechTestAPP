@@ -13,7 +13,7 @@ const SplashScreen = ({navigation}) => {
   return (
     <SafeAreaView style={style.container}>
       <StatusBar backgroundColor={colors.dark} barStyle={'lite-content'} />
-      <Image source={require('../../assets/img/logo.png')} />
+      <Image source={require('../../../assets/img/logo.png')} />
       <Text style={style.subHeading}>Technical Test</Text>
       <Text style={style.name}>By Hiran Tharinda</Text>
     </SafeAreaView>
@@ -31,13 +31,14 @@ const style = StyleSheet.create({
     flex: 1,
   },
   subHeading: {
-    fontSize: 15,
-    fontWeight: 'bold',
+    fontSize: 18,
+    fontFamily: 'Nunito-Bold',
     color: colors.white,
   },
   name: {
-    fontSize: 10,
+    fontSize: 13,
     color: colors.white,
+    fontFamily: 'DancingScript-Bold',
     marginBottom: 10,
   },
 });

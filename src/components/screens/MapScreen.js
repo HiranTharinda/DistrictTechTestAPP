@@ -1,10 +1,12 @@
 import React, {useRef, useEffect, useCallback} from 'react';
-import {StyleSheet, View, Text} from 'react-native';
+import {StyleSheet, View, Text, StatusBar} from 'react-native';
 import {useFocusEffect} from '@react-navigation/native';
 import {connect} from 'react-redux';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import MapView, {PROVIDER_GOOGLE, Marker, Callout} from 'react-native-maps';
 import mapStyles from '../../constants/mapStyles';
 import colors from '../../constants/colors';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
 const MapScreen = ({navigation, route, restaurants}) => {
   const mapViewRef = useRef();
@@ -50,7 +52,12 @@ const MapScreen = ({navigation, route, restaurants}) => {
   );
 
   return (
-    <View>
+    <SafeAreaView>
+      <StatusBar
+        animated={true}
+        backgroundColor={colors.white}
+        barStyle={'dark-content'}
+      />
       <MapView
         ref={mapViewRef}
         style={style.map}
@@ -65,10 +72,17 @@ const MapScreen = ({navigation, route, restaurants}) => {
               longitude: item.longitude,
             }}
             title={item.name}
-            description={item.description}
-            image={require('../../assets/img/marker.png')}>
+            description={item.description}>
+            <View>
+              <FontAwesome5
+                name="map-marker-alt"
+                color={colors.primary}
+                size={35}
+              />
+            </View>
             <Callout
               tooltip
+              style={{flex: 1, position: 'relative'}}
               onPress={() => navigation.navigate('Details', item)}>
               <View style={style.Bubble}>
                 <Text style={style.text}>More Details</Text>
@@ -77,7 +91,7 @@ const MapScreen = ({navigation, route, restaurants}) => {
           </Marker>
         ))}
       </MapView>
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -97,14 +111,17 @@ const style = StyleSheet.create({
     flexDirection: 'row',
     alignSelf: 'flex-start',
     backgroundColor: colors.white,
-    borderRadius: 30,
+    borderBottomRightRadius: 30,
+    borderTopRightRadius: 30,
+    borderTopLeftRadius: 30,
     borderColor: colors.primary,
     elevation: 5,
-    borderWidth: 1,
+    borderWidth: 2,
     padding: 5,
+    marginBottom: 10,
   },
   text: {
     margin: 5,
-    fontWeight: 'bold',
+    fontFamily: 'Nunito-Bold',
   },
 });

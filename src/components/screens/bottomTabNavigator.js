@@ -1,7 +1,6 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import FeatherIcon from 'react-native-vector-icons/Feather';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import RestaurantScreen from './restaurantScreen';
 import MapScreen from './mapScreen';
 import colors from '../../constants/colors';
@@ -13,20 +12,30 @@ const BottomTabNavigator = () => {
     <Tab.Navigator
       screenOptions={{
         headerShown: false,
-        style: {
-          heigh: 100,
+        tabBarStyle: {
+          position: 'absolute',
+          bottom: 25,
+          left: 20,
+          right: 20,
+          backgroundColor: colors.white,
+          borderRadius: 15,
+          height: 70,
           borderTopWidth: 0,
-          elevation: 0,
+          elevation: 5,
         },
-        showLabel: false,
         activeTintColor: colors.primary,
       }}>
       <Tab.Screen
         name="Restaurant"
         component={RestaurantScreen}
         options={{
-          tabBarIcon: ({color}) => (
-            <Ionicons name="fast-food-outline" color={color} size={28} />
+          tabBarShowLabel: false,
+          tabBarIcon: ({focused}) => (
+            <FontAwesome5
+              name="hamburger"
+              color={focused ? colors.primary : colors.grey}
+              size={35}
+            />
           ),
         }}
       />
@@ -34,8 +43,13 @@ const BottomTabNavigator = () => {
         name="Map"
         component={MapScreen}
         options={{
-          tabBarIcon: ({color}) => (
-            <FeatherIcon name="map-pin" color={color} size={28} />
+          tabBarShowLabel: false,
+          tabBarIcon: ({focused}) => (
+            <FontAwesome5
+              name="map-marker-alt"
+              color={focused ? colors.primary : colors.grey}
+              size={35}
+            />
           ),
         }}
       />
