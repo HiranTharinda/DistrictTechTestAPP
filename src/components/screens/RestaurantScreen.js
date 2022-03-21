@@ -1,5 +1,11 @@
 import React, {useEffect} from 'react';
-import {FlatList, Text, View, StyleSheet} from 'react-native';
+import {
+  FlatList,
+  Text,
+  View,
+  StyleSheet,
+  ActivityIndicator,
+} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {connect} from 'react-redux';
 import ListCard from '../elements/listCard';
@@ -16,15 +22,20 @@ const RestaurantScreen = ({navigation, restaurants, getRestaurants}) => {
       <View style={style.header}>
         <Text style={style.headerTitle}>Restaurants</Text>
       </View>
-
-      <FlatList
-        showsVerticalScrollIndicator={false}
-        contentContainerStyle={{paddingBottom: 80}}
-        data={restaurants}
-        renderItem={({item}) => (
-          <ListCard item={item} navigation={navigation} />
-        )}
-      />
+      {restaurants.length ? (
+        <FlatList
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={{paddingBottom: 80}}
+          data={restaurants}
+          renderItem={({item}) => (
+            <ListCard item={item} navigation={navigation} />
+          )}
+        />
+      ) : (
+        <View style={style.activityIndicatorView}>
+          <ActivityIndicator size="large" color={colors.primary} />
+        </View>
+      )}
     </SafeAreaView>
   );
 };
@@ -44,6 +55,11 @@ export default connect(mapStateToProps, mapDispatchToProps)(RestaurantScreen);
 const style = StyleSheet.create({
   container: {
     backgroundColor: colors.white,
+    flex: 1,
+  },
+  activityIndicatorView: {
+    flex: 1,
+    alignItems: 'center',
   },
   header: {
     paddingVertical: 20,

@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import colors from '../../constants/colors';
+
 const ListCard = ({item, navigation}) => {
   return (
     <View style={style.listCard}>
@@ -17,7 +18,9 @@ const ListCard = ({item, navigation}) => {
           <Text>View</Text>
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={() => navigation.navigate('Map', item)}
+          onPress={() =>
+            navigation.navigate('Map', {item: item, oneItem: true})
+          }
           style={style.locateBtn}>
           <Text>Locate</Text>
         </TouchableOpacity>

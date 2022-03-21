@@ -1,37 +1,80 @@
-import React, {useRef, useEffect, useState} from 'react';
-import {StyleSheet, View} from 'react-native';
+import React, {useRef, useEffect, useCallback} from 'react';
+import {StyleSheet, View, Text} from 'react-native';
+import {useFocusEffect} from '@react-navigation/native';
 import {connect} from 'react-redux';
-import MapView, {PROVIDER_GOOGLE, Marker} from 'react-native-maps';
-import {getRestaurants} from '../../actions/restaurantsAction';
+import MapView, {PROVIDER_GOOGLE, Marker, Callout} from 'react-native-maps';
 import mapStyles from '../../constants/mapStyles';
+import colors from '../../constants/colors';
 
-const MapScreen = ({restaurants, getRestaurants}) => {
+const MapScreen = ({navigation, route, restaurants}) => {
   const mapViewRef = useRef();
 
   useEffect(() => {
-    if (!restaurants.length) getRestaurants();
+    if (!route.params) {
+      setTimeout(() => {
+        mapViewRef.current.fitToSuppliedMarkers(
+          restaurants.map(({_id}) => _id),
+          true,
+        );
+      }, 100);
+    }
   }, []);
+
+  useEffect(() => {
+    const unsubscribe = navigation.addListener('focus', () => {
+      if (!route.params) {
+        mapViewRef.current.fitToSuppliedMarkers(
+          restaurants.map(({_id}) => _id),
+          true,
+        );
+      } else if (route.params.item) {
+        const {latitude, longitude} = route.params.item;
+        const marker = [{latitude, longitude}];
+        mapViewRef.current.fitToCoordinates(marker, true);
+      } else {
+        mapViewRef.current.fitToSuppliedMarkers(
+          restaurants.map(({_id}) => _id),
+          true,
+        );
+      }
+    });
+    return unsubscribe;
+  }, [navigation, route]);
+
+  useFocusEffect(
+    useCallback(() => {
+      return () => {
+        navigation.setParams({item: null});
+      };
+    }, []),
+  );
 
   return (
     <View>
       <MapView
-        fitToSuppliedMarkers={restaurants.map(({_id}) => _id)}
         ref={mapViewRef}
         style={style.map}
         customMapStyle={mapStyles}
         provider={PROVIDER_GOOGLE}>
-        {restaurants.map((marker, index) => (
+        {restaurants.map((item, index) => (
           <Marker
-            key={marker._id}
-            identifier={marker._id}
+            key={item._id}
+            identifier={item._id}
             coordinate={{
-              latitude: marker.latitude,
-              longitude: marker.longitude,
+              latitude: item.latitude,
+              longitude: item.longitude,
             }}
-            title={marker.name}
-            description={marker.description}
-            image={require('../../assets/img/marker.png')}
-          />
+            title={item.name}
+            description={item.description}
+            image={require('../../assets/img/marker.png')}>
+            <Callout
+              tooltip
+              onPress={() => navigation.navigate('Details', item)}>
+              <View style={style.Bubble}>
+                <Text style={style.text}>More Details</Text>
+              </View>
+            </Callout>
+          </Marker>
         ))}
       </MapView>
     </View>
@@ -44,14 +87,24 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = dispatch => ({
-  getRestaurants: () => dispatch(getRestaurants()),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(MapScreen);
+export default connect(mapStateToProps, {})(MapScreen);
 
 const style = StyleSheet.create({
   map: {
     height: '100%',
+  },
+  Bubble: {
+    flexDirection: 'row',
+    alignSelf: 'flex-start',
+    backgroundColor: colors.white,
+    borderRadius: 30,
+    borderColor: colors.primary,
+    elevation: 5,
+    borderWidth: 1,
+    padding: 5,
+  },
+  text: {
+    margin: 5,
+    fontWeight: 'bold',
   },
 });

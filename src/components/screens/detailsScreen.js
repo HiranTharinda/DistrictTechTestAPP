@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-
 import {
   Text,
   View,
@@ -20,8 +19,8 @@ const windowHeight = Dimensions.get('window').height;
 
 const DetailsScreen = ({navigation, route, updateRestaurant}) => {
   const item = route.params;
-
   const [star, setStar] = useState(false);
+
   useEffect(() => {
     setStar(item.star);
   }, [item]);

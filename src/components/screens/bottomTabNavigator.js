@@ -2,8 +2,8 @@ import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import RestaurantScreen from './RestaurantScreen';
-import MapScreen from './MapScreen';
+import RestaurantScreen from './restaurantScreen';
+import MapScreen from './mapScreen';
 import colors from '../../constants/colors';
 
 const Tab = createBottomTabNavigator();
@@ -14,7 +14,7 @@ const BottomTabNavigator = () => {
       screenOptions={{
         headerShown: false,
         style: {
-          heigh: 55,
+          heigh: 100,
           borderTopWidth: 0,
           elevation: 0,
         },
