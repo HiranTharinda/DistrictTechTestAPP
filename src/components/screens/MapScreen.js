@@ -16,7 +16,6 @@ const MapScreen = ({navigation, route, restaurants}) => {
       setTimeout(() => {
         mapViewRef.current.fitToSuppliedMarkers(
           restaurants.map(({_id}) => _id),
-          true,
         );
       }, 100);
     }
@@ -27,7 +26,6 @@ const MapScreen = ({navigation, route, restaurants}) => {
       if (!route.params) {
         mapViewRef.current.fitToSuppliedMarkers(
           restaurants.map(({_id}) => _id),
-          true,
         );
       } else if (route.params.item) {
         const {latitude, longitude} = route.params.item;
@@ -36,7 +34,6 @@ const MapScreen = ({navigation, route, restaurants}) => {
       } else {
         mapViewRef.current.fitToSuppliedMarkers(
           restaurants.map(({_id}) => _id),
-          true,
         );
       }
     });
@@ -76,7 +73,6 @@ const MapScreen = ({navigation, route, restaurants}) => {
             image={require('../../../assets/img/pin2.png')}>
             <Callout
               tooltip
-              style={{flex: 1, position: 'relative'}}
               onPress={() => navigation.navigate('Details', item)}>
               <View style={style.Bubble}>
                 <Text style={style.text}>More Details</Text>

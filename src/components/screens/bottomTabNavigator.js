@@ -1,4 +1,5 @@
 import React from 'react';
+import {View, StyleSheet} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import RestaurantScreen from './restaurantScreen';
@@ -31,11 +32,13 @@ const BottomTabNavigator = () => {
         options={{
           tabBarShowLabel: false,
           tabBarIcon: ({focused}) => (
-            <FontAwesome5
-              name="hamburger"
-              color={focused ? colors.primary : colors.grey}
-              size={35}
-            />
+            <View style={style.tabIcon}>
+              <FontAwesome5
+                name="hamburger"
+                color={focused ? colors.primary : colors.grey}
+                size={35}
+              />
+            </View>
           ),
         }}
       />
@@ -45,11 +48,13 @@ const BottomTabNavigator = () => {
         options={{
           tabBarShowLabel: false,
           tabBarIcon: ({focused}) => (
-            <FontAwesome5
-              name="map-marker-alt"
-              color={focused ? colors.primary : colors.grey}
-              size={35}
-            />
+            <View style={style.tabIcon}>
+              <FontAwesome5
+                name="map-marker-alt"
+                color={focused ? colors.primary : colors.grey}
+                size={35}
+              />
+            </View>
           ),
         }}
       />
@@ -58,3 +63,10 @@ const BottomTabNavigator = () => {
 };
 
 export default BottomTabNavigator;
+
+const style = StyleSheet.create({
+  tabIcon: {
+    alignItems: 'center',
+    width: 100,
+  },
+});
